@@ -1,5 +1,5 @@
 <?php
-echo "<button type="submit" name="delete_example">"
+echo '<button type="submit" name="delete_example">'
 if(isset($_POST['delete_example'])){
 	setcookie("username","",time()-3600);
 	echo "クッキーを食べたよ";
