@@ -12,11 +12,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 </form>
 <?php
 if (isset($_COOKIE['username'])) {
-  $input_name = htmlspecialchars($_POST['input'],ENT_QUOTES,'UTF-8');
-echo "hello".$_COOKIE['username']."!<br>";
+  echo "hello! ".$_COOKIE['username']."!<br>";
 }
 else {
-echo "<center>who are you</center>";
+  echo "<center>who are you</center>";
 }
 ?>
 </center>
