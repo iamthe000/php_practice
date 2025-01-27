@@ -4,6 +4,6 @@ if(isset($_COOKIE["username"])){
 	echo "hello".$_COOKIE["username"]."さん!!!";
 }
 else{
-	echo "クッキーが無いぞ!!!🍪"
+	echo "クッキーが無いぞ!!!🍪";
 }
 ?>
