@@ -2,8 +2,8 @@
 session_start();
 
 // 仮のユーザーデータ（通常はデータベースから取得）
-$valid_username = 'iamhoshi';
-$valid_password = 'password123';
+$valid_username = 'user';
+$valid_password = 'password';
 
 // ログイン処理
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
