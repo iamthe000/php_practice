@@ -2,6 +2,9 @@
 /*
 結局わけわからん
 誰か助けて...........
+
+
+わかったどぉぉぉぉｘ
 */
 session_start();
 
@@ -30,7 +33,7 @@ if (isset($_GET['logout'])) {
     session_destroy();
     // セッション変数をすべて解除
     $_SESSION = array();
-    header('Location: ' . $_SERVER['PHP_SELF']);
+    header('Location: ' . $_SERVER['PHP_SELF']);//こんなコードでリロードできたんだ..感動......
     exit();
 }
 ?>
