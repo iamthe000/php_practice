@@ -1,5 +1,5 @@
 <?php
-class human{
+class Human{
     public $name;
     private $age;
     protected $mail;
