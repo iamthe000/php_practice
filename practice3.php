@@ -18,7 +18,7 @@ class Human{
         echo "hello" . $test . "!<br>";
     }
 }
-$hoshi = new human("hoshi","15","example@email.com");
+$hoshi = new human("iam","15","example@email.com");
 $hoshi -> hello();
 $hoshi -> way();
 echo "test:" . $hoshi->name . "!!!<br>";
