@@ -31,11 +31,14 @@ try {
 }
 
 
-//データの作成
+//vvvvvvvvvvvvvvvvデータの作成vvvvvvvvvvvvvvvv
 
 $sql = "INSERT INTO users (name, age) VALUES (:name, :age)";
 $stmt = $pdo->prepare($sql);
-//「->」は保存とかじゃなくて、呼び出し、それに[$a="test"]とかで設定した普通の変数を呼び出すのに使う。この場合は$stmt = $pdo->prepare($sql);だと、$stmtの関数に$pdoのprepareってやつを実行した結果を設定するってっこと
+/*----------【「->」について】----------
+「->」は保存とかじゃなくて、呼び出し、それに[$a="test"]とかで設定した普通の変数を呼び出すのに使う
+この場合の「$stmt = $pdo->prepare($sql);」だと、$stmtの関数に$pdoのprepareってやつを実行した結果を設定するってっこと
+*/
 $stmt->execute([
     ':name' => '太郎',
     ':age' => 20
