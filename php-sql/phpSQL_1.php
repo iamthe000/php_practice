@@ -23,4 +23,17 @@ try {
 } catch (\PDOException $e) {
     throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
+
+
+//データの作成
+
+$sql = "INSERT INTO users (name, age) VALUES (:name, :age)";
+$stmt = $pdo->prepare($sql);
+//「->」は保存とかじゃなくて、呼び出し、それに[$a="test"]とかで設定した普通の変数を呼び出すのに使う。この場合は$stmt = $pdo->prepare($sql);だと、$stmtの関数に$pdoのprepareってやつを設定する...ということ？
+
+$stmt->execute([
+    ':name' => '太郎',
+    ':age' => 20
+]);
+echo "データを追加しました";
 ?>
