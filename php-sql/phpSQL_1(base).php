@@ -44,4 +44,21 @@ $stmt->execute([
     ':age' => 20
 ]);
 echo "データを追加しました";
+
+//vvvvvvvvvvvvvvvvデータの取得vvvvvvvvvvvvvvvv
+
+$sql = "SELECT * FROM users WHERE age > :age";
+$stmt = $pdo->prepare($sql);//「これからのstmtは$pdoのprepareメソッドってことだよ〜」
+$stmt->execute([':age' => 18]);//$sqlのなかの「:age」に18を代入して実行する
+
+$results = $stmt->fetchAll(); //stmtによるsqlの実行結果をfetchAll()で取り出す
+foreach ($results as $row) {//foreachで$resultsで取り出した実行結果を1行の情報で$rowで連想配列として保存する
+    echo $row['name'] . ' - ' . $row['age'] . "<br>";//「-」で値をつなげて<br>で都度改行している。例えばこれだと「太郎 - 20」として出力される
+}
+/*----------【「$sql」について】----------
+$sqlのなかにSQLの指示をそのまま書く
+*/
+/*----------【「$stmt」について】----------
+$sqlのなかの「:age」に18を代入して実行する
+*/
 ?>
