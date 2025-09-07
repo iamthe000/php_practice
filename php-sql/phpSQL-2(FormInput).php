@@ -43,6 +43,11 @@ echo $b; // $aがnullなので「デフォルト」と表示される
         echo "名前と年齢を入力してください。<br>";
     }
 }
+
+// ====== データの一覧表示（SELECT） ======
+$sql = "SELECT * FROM users ORDER BY id DESC"; // 新しい順に並べる
+$stmt = $pdo->query($sql);
+$results = $stmt->fetchAll();
 ?>
 
 <!-- ====== 入力フォーム(html部分) ====== -->
@@ -51,3 +56,15 @@ echo $b; // $aがnullなので「デフォルト」と表示される
     年齢: <input type="number" name="age"><br>
     <button type="submit">保存</button>
 </form>
+
+<!-- ====== データ一覧表示 ====== -->
+<h2>登録されたユーザー一覧</h2>
+<?php if (count($results) > 0): ?>
+    <ul>
+        <?php foreach ($results as $row): ?>
+            <li><?= htmlspecialchars($row['name']) ?> (<?= htmlspecialchars($row['age']) ?>歳)</li>
+        <?php endforeach; ?>
+    </ul>
+<?php else: ?>
+    <p>まだデータがありません。</p>
+<?php endif; ?>
