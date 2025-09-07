@@ -34,9 +34,9 @@ echo $b; // $aがnullなので「デフォルト」と表示される
 */
   
     if ($name !== '' && $age !== '') {
-        $sql = "INSERT INTO users (name, age) VALUES (:name, :age)";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute([':name' => $name, ':age' => $age]);
+        $sql = "INSERT INTO users (name, age) VALUES (:name, :age)";// 1. SQL文の「型」を作る（:name と :age の枠を作っておく）
+        $stmt = $pdo->prepare($sql);// 2. SQL文をPDOに渡して「準備」する（この時点ではまだ実行されない）prepareは「安全に処理できるように準備してね」ってお願いするイメージ
+        $stmt->execute([':name' => $name, ':age' => $age]);// 3. 実際にデータを埋め込んで実行
 
         echo "保存しました！<br>";
     } else {
