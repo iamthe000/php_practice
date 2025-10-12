@@ -1,0 +1,8 @@
+scheme	プロトコル（例: http, https）
+host	ホスト名/ドメイン名（例: www.example.com）
+port	ポート番号（例: 8080）
+user	ユーザー名（認証情報に含まれる場合）
+pass	パスワード（認証情報に含まれる場合）
+path	パス（例: /dir/file.html）
+query	クエリ文字列（?以降の部分）
+fragment	フラグメント（#以降の部分）
