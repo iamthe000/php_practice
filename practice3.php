@@ -18,9 +18,9 @@ class Human{
         echo "hello" . $test . "!<br>";
     }
 }
-$hoshi = new human("iam","15","example@email.com");
-$hoshi -> hello();
-$hoshi -> way();
-echo "test:" . $hoshi->name . "!!!<br>";
+$test = new human("iam","15","example@email.com");
+$test -> hello();
+$test -> way();
+echo "test:" . $test->name . "!!!<br>";
 echo "PHPオブジェクト指向"
 ?>
